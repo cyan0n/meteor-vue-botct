@@ -3,7 +3,7 @@
 		<img src="/images/logo.svg" alt="" class="logo">
 		<h1 class="has-text-centered"><span class="blood">Blood</span> on the Clock Tower</h1>
 		<button class="button is-light">Join</button>
-		<button class="button is-light">Host</button>
+		<router-link :to="{ name:'host', exact: true }" class="button is-light">Host</router-link>
 	</div>
 </template>
 

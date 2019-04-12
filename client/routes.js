@@ -5,6 +5,7 @@ import { RouterFactory } from 'meteor/akryum:vue-router2'
 import Home from '/imports/pages/Home.vue'
 import Page from '/imports/pages/Page.vue'
 import NotFound from '/imports/pages/NotFound.vue';
+import CreateGame from '/imports/pages/Host/CreateGame.vue';
 
 RouterFactory.configure(factory => {
 	// Simple routes
@@ -18,6 +19,11 @@ RouterFactory.configure(factory => {
 			name: 'page',
 			component: Page,
 		},
+		{
+			path: '/host',
+			name: 'host',
+			component: CreateGame,
+		}
 	]);
 });
 
