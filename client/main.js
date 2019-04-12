@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import WebFont from 'webfontloader';
 import { RouterFactory, nativeScrollBehavior } from 'meteor/akryum:vue-router2';
 
 import './main.html';
@@ -12,6 +13,14 @@ const routerFactory = new RouterFactory({
 });
 
 Meteor.startup(() => {
+	WebFont.load({
+		google: {
+			families: [
+				'Cinzel',
+				'Raleway',
+			],
+		},
+	});
 	const router = routerFactory.create();
 
 	new Vue({

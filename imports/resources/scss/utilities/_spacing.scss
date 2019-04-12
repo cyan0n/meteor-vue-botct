@@ -1,0 +1,76 @@
+$sizeUnit: rem;
+$sizes: (('0', 0),
+	('1', 0.125),
+	('2', 0.25),
+	('3', 0.5),
+	('4', 1),
+	('5', 2),
+	('6', 4),
+	('7', 8),
+);
+
+// margin and padding
+@each $prop, $abbrev in (margin: m, padding: p) {
+	@each $size, $length in $sizes {
+		.#{$abbrev}-#{$size} {
+			#{$prop}: $length + $sizeUnit !important;
+		}
+		.#{$abbrev}t-#{$size},
+		.#{$abbrev}y-#{$size} {
+			#{$prop}-top: $length + $sizeUnit !important;
+		}
+		.#{$abbrev}b-#{$size},
+		.#{$abbrev}y-#{$size} {
+			#{$prop}-bottom: $length + $sizeUnit !important;
+		}
+		.#{$abbrev}r-#{$size},
+		.#{$abbrev}x-#{$size} {
+			#{$prop}-right: $length + $sizeUnit !important;
+		}
+		.#{$abbrev}l-#{$size},
+		.#{$abbrev}x-#{$size} {
+			#{$prop}-left: $length + $sizeUnit !important;
+		}
+	}
+}
+
+// Negative margins
+@each $size, $length in $sizes {
+	.m-n#{$size} {
+		margin: -$length + $sizeUnit !important;
+	}
+	.mt-n#{$size},
+	.my-n#{$size} {
+		margin-top: -$length + $sizeUnit !important;
+	}
+	.mb-n#{$size},
+	.my-n#{$size} {
+		margin-bottom: -$length + $sizeUnit !important;
+	}
+	.mr-n#{$size},
+	.mx-n#{$size} {
+		margin-right: -$length + $sizeUnit !important;
+	}
+	.ml-n#{$size},
+	.mx-n#{$size} {
+		margin-left: -$length + $sizeUnit !important;
+	}
+}
+
+.m-auto { margin: auto !important; }
+.mt-auto,
+.my-auto {
+	margin-top: auto !important;
+}
+.mr-auto,
+.mx-auto {
+	margin-right: auto !important;
+}
+.mb-auto,
+.my-auto {
+	margin-bottom: auto !important;
+}
+.ml-auto,
+.mx-auto {
+	margin-left: auto !important;
+}

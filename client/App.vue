@@ -1,16 +1,27 @@
 <template>
-	<div>
-		<app-menu></app-menu>
-		<h2>Hello Vue</h2>
-		<!-- Route content -->
-		<router-view></router-view>
+	<div class="grid">
+		<router-view class="content"></router-view>
 	</div>
 </template>
 
 <script>
-import AppMenu from '/imports/pages/layout/AppMenu.vue';
 
 export default {
-	components: { AppMenu }
+	components: {  }
 }
 </script>
+
+<style lang="scss">
+	.grid {
+		flex-grow: 1;
+		display: grid;
+		grid-template-columns: auto 600px auto;
+		grid-template-rows: 80px auto 20px;
+		grid-template-areas:
+			". . ."
+			". content .";
+	}
+	.content {
+		grid-area: content;
+	}
+</style>
