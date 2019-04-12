@@ -1,22 +1,22 @@
-import { Template } from 'meteor/templating';
-import { ReactiveVar } from 'meteor/reactive-var';
+import Vue from 'vue';
+import { RouterFactory, nativeScrollBehavior } from 'meteor/akryum:vue-router2';
 
 import './main.html';
+import App from './App.vue';
 
-Template.hello.onCreated(function helloOnCreated() {
-  // counter starts at 0
-  this.counter = new ReactiveVar(0);
+import './routes';
+// Create router instance
+const routerFactory = new RouterFactory({
+	mode: 'history',
+	scrollBehavior: nativeScrollBehavior,
 });
 
-Template.hello.helpers({
-  counter() {
-    return Template.instance().counter.get();
-  },
-});
+Meteor.startup(() => {
+	const router = routerFactory.create();
 
-Template.hello.events({
-  'click button'(event, instance) {
-    // increment the counter when button is clicked
-    instance.counter.set(instance.counter.get() + 1);
-  },
+	new Vue({
+		router,
+		el: '#app',
+		...App
+	});
 });
