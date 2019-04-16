@@ -23,3 +23,5 @@ akryum:vue-component
 akryum:vue-router2
 fourseven:scss
 akryum:vue-sass
+aldeed:simple-schema
+percolate:migrations
