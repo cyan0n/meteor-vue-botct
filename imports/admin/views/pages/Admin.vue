@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h1>Create</h1>
+		Admin Panel
 	</div>
 </template>
 

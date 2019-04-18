@@ -1,8 +1,5 @@
 <template>
-	<div class="grid">
-		<router-view class="content"></router-view>
-		<role-token :role="role"></role-token>
-	</div>
+	<router-view class="full-page"></router-view>
 </template>
 
 <script>

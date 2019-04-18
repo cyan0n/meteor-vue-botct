@@ -1,29 +1,16 @@
 // Import the router
 import { RouterFactory } from 'meteor/akryum:vue-router2'
 
-// Components
-import Home from '/imports/pages/Home.vue'
-import Page from '/imports/pages/Page.vue'
-import NotFound from '/imports/pages/NotFound.vue';
-import CreateGame from '/imports/pages/Host/CreateGame.vue';
+import routes from '/imports/routes.js';
+import admin_routes from '/imports/admin/routes.js';
+
+import NotFound from '/imports/views/pages/NotFound.vue';
 
 RouterFactory.configure(factory => {
 	// Simple routes
-	factory.addRoutes([{
-			path: '/',
-			name: 'home',
-			component: Home,
-		},
-		{
-			path: '/page',
-			name: 'page',
-			component: Page,
-		},
-		{
-			path: '/host',
-			name: 'host',
-			component: CreateGame,
-		}
+	factory.addRoutes([
+		...routes,
+		...admin_routes,
 	]);
 });
 

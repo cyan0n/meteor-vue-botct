@@ -9,6 +9,16 @@ html {
 	height: 100%;
 }
 body {
+	min-height: 100%;
+	display: flex;
+}
+.full-page {
+	min-height: 100%;
+	flex-grow: 1;
+}
+@import '{}/imports/style.scss';
+
+/* body {
 	@include linear-gradient(to bottom, $black-bis 80%, $blood-red 100%);
 	min-height: 100%;
 	color: $white-bis;
@@ -17,4 +27,4 @@ body {
 }
 .blood {
 	color: $blood-red;
-}
+} */
