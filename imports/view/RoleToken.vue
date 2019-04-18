@@ -1,11 +1,10 @@
 <template>
 	<div class="role-token">
-		<h4>{{ role.name.en }}</h4>
-		<svg viewBox="0 0 130 130">
-			<path d="m20,70c0,-27.62431 22.37569,-50 50,-50c27.62431,0 50,22.37569 50,50c0,27.62431 -22.37569,50 -50,50c-27.62431,0 -50,-22.37569 -50,-50z" fill="black" id="circle" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="null" transform="rotate(-90 70 70)"/>
+		<svg viewBox="-5 -5 110 110">
+			<path d="m0,50a50,50 0 0 0 100,0" id="arch" fill="transparent"/>
 			<text width="500" text-anchor="middle">
-				<textPath xlink:href="#circle" startOffset="50%">
-				Dangerous Curves Ahead
+				<textPath xlink:href="#arch" startOffset="50%">
+					{{ role.name.en }}
 				</textPath>
 			</text>
 		</svg>
@@ -37,14 +36,32 @@ export default {
 		position: absolute;
 		border-radius: 100px;
 		overflow: hidden;
-		//height: 200px;
-		//width: 200px;
+		height: 200px;
+		width: 200px;
 		display: flex;
 		flex-direction: column;
-		align-items: center;
+		justify-content: center;
 	}
 	svg {
-		width: 100px;
+		width: 188px;
+		position: absolute;
+		z-index: 10;
+	}
+	p {
+		position: absolute;
+		z-index: 10;
+		color: black;
+		top: 20px;
+		width: 121px;
+		margin: auto;
+		right: 0;
+		font-size: 12px;
+		left: 0;
+		line-height: initial;
+		text-align: center;
+	}
+	img {
+		width: 200px;
 	}
 </style>
 
