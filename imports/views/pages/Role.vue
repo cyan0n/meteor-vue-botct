@@ -12,12 +12,12 @@ export default {
 			role: {
 				type: "townsfolk",
 				edition: "troubles_brewing",
-				label: "washerwoman",
+				label: "librarian",
 				name: {
-					en: "Washerwoman",
-					it: "Lavandaia",
+					en: "Librarian",
+					it: "Biblotecario",
 				},
-				icon: 'Washerwoman_icon.png',
+				icon: 'Librarian_icon.png',
 				tokens: [
 					{
 						label: "wrong",
@@ -27,16 +27,16 @@ export default {
 						quantity: 1
 					},
 					{
-						label: "townsfolk",
+						label: "outsider",
 						name: {
-							en: "Townsfolk"
+							en: "Outsider"
 						},
 						quantity: 1
 					},
 				],
 				wake: 1,
 				description: {
-					en: "You start knowing that 1 of 2 players is a particular Townsfolk",
+					en: "You start knowing that 1 of 2 players is a particular Outsider. (Or that zero are in play)",
 					it: "",
 				},
 				flavour: {

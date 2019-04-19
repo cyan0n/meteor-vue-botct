@@ -32,9 +32,10 @@ export default {
 <style lang="scss" scoped>
 	.role-token {
 		border: 6px solid #00b89c;
-		background: white;
-		position: absolute;
 		border-radius: 100px;
+		background: url('/images/token_bg.jpg');
+		background-position: center;
+		position: absolute;
 		overflow: hidden;
 		height: 200px;
 		width: 200px;
