@@ -31,7 +31,7 @@ export default {
 
 <style lang="scss" scoped>
 	.role-token {
-		border: 6px solid #00b89c;
+		border: 10px solid #404040;
 		border-radius: 100px;
 		background: url('/images/token_bg.jpg');
 		background-position: center;
@@ -56,13 +56,18 @@ export default {
 		width: 121px;
 		margin: auto;
 		right: 0;
-		font-size: 12px;
+		font-size: 11px;
 		left: 0;
-		line-height: initial;
+		line-height: 12px;
 		text-align: center;
+		font-family: 'Libre Baskerville', serif;
+		text-shadow: 0 0 5px white;
 	}
 	img {
 		width: 200px;
+	}
+	textPath {
+		font-family: 'Macondo Swash Caps', cursive;
 	}
 </style>
 

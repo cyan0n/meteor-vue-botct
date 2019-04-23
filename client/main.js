@@ -18,6 +18,8 @@ Meteor.startup(() => {
 			families: [
 				'Cinzel',
 				'Raleway',
+				'Macondo+Swash+Caps',
+				'Libre+Baskerville',
 			],
 		},
 	});
