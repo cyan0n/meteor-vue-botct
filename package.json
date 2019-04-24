@@ -2,7 +2,7 @@
   "name": "meteor-vue",
   "private": true,
   "scripts": {
-    "meteor": "NO_HMR=1 meteor",
+    "meteor": "NO_HMR=1 meteor --settings=settings.json",
     "start": "meteor run",
     "test": "meteor test --once --driver-package meteortesting:mocha",
     "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
@@ -13,6 +13,7 @@
     "bulma-scss": "^0.7.4-1",
     "meteor-node-stubs": "^0.4.1",
     "vue": "^2.6.10",
+    "vue-meteor-tracker": "^2.0.0-beta.5",
     "vue-router": "^3.0.3",
     "webfontloader": "^1.6.28"
   },
