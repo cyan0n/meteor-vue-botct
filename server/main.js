@@ -1,9 +1,9 @@
 import { Meteor } from 'meteor/meteor';
 
-import Roles from '/imports/collections/Roles';
 import './migrations';
+import roles from './migrations/roles';
 
 Meteor.startup(() => {
   // code to run on server at startup
-  Migrations.migrateTo('latest');
+  Migrations.migrateTo('1');
 });

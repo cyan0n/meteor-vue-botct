@@ -1,4 +1,6 @@
 import Vue from 'vue';
+import VueMeteorTracker from 'vue-meteor-tracker';
+Vue.use(VueMeteorTracker);
 import WebFont from 'webfontloader';
 import { RouterFactory, nativeScrollBehavior } from 'meteor/akryum:vue-router2';
 

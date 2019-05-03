@@ -1,19 +1,14 @@
 <template>
 	<div>
-	<!-- Choose number of players -->
-	<select>
-		<option :value="index" v-for="(item, index) in player_numbers"></option>
-	</select>
+		<script-builder></script-builder>
 	</div>
 </template>
 
 <script>
+import ScriptBuilder from '/imports/views/components/ScriptBuilder';
+
 export default {
-	data() {
-		return {
-			player_numbers: Meteor.settings.players,
-		}
-	},
+	components: { ScriptBuilder }
 }
 </script>
 

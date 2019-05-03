@@ -1,12 +1,11 @@
 import Roles from '/imports/collections/Roles';
+import roles from './migrations/roles';
 
 Migrations.add({
 	version: 1,
 	up() {
-		Roles.insert({
-			name: 'Lavandaia',
-			desc_short: 'You start knowing that 1 of 2',
-			desc_long: 'lorem ipsum loret ecc...'
+		roles.forEach(role => {
+			Roles.insert(role);
 		});
 	},
 	down() {

@@ -1,6 +1,13 @@
-/* Variables */
+/* Initial Variables */
 $blood-red: #571f1f;
 $pdd: 160px;
+@import '{}/node_modules/bulma-scss/utilities/initial-variables';
+
+/* Variables */
+$modal-card-head-background-color: $black-ter;
+$modal-card-title-color: $white;
+$modal-card-body-background-color: $black-bis;
+
 @import '{}/node_modules/bulma-scss/bulma';
 @import '{}/imports/resources/scss/utilities/mixins';
 @import '{}/imports/resources/scss/utilities/spacing';
