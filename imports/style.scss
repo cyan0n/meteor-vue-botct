@@ -8,11 +8,15 @@
 	}
 	display: grid;
 	grid-template-columns: auto 600px auto;
-	grid-template-rows: 80px auto 20px;
+	grid-template-rows: 20px 80px auto 20px;
 	grid-template-areas:
+		"nav nav nav"
 		". . ."
 		". content .";
 	.content {
 		grid-area: content;
+	}
+	.navbar {
+		grid-area: nav;
 	}
 }
