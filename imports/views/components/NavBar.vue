@@ -1,7 +1,7 @@
 <template>
 	<nav class="navbar">
 		<div class="navbar-brand">
-			<span class="navbar-item">{{ User.username }}</span>
+			<span v-if="User" class="navbar-item">{{ User.username }}</span>
 			<a class="navbar-burger burger" :class="{'is-active':active}" @click.prevent="active = !active">
 				<span></span>
 				<span></span>
@@ -9,7 +9,7 @@
 			</a>
 		</div>
 		<div class="navbar-menu" :class="{'is-active':active}">
-			<div class="navbar-start">
+			<div class="navbar-end">
 				<a class="navbar-item" @click.prevent="logout">Logout</a>
 			</div>
 		</div>

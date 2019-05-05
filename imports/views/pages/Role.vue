@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import RoleToken from '/imports/view/RoleToken.vue';
+import RoleToken from '/imports/views/components/RoleToken.vue';
 
 export default {
 	components: { RoleToken },

@@ -6,7 +6,7 @@ export default [{
 			en: "Imp",
 			it: "",
 		},
-		icon: 'Img_icon.png',
+		icon: 'Imp_icon.png',
 		tokens: [{
 			label: "dead",
 			name: {

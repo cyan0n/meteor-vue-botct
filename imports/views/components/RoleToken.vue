@@ -1,15 +1,20 @@
 <template>
-	<div class="role-token">
-		<svg viewBox="-5 -5 110 110">
-			<path d="m0,50a50,50 0 0 0 100,0" id="arch" fill="transparent"/>
-			<text width="500" text-anchor="middle">
-				<textPath xlink:href="#arch" startOffset="50%">
-					{{ role.name.en }}
-				</textPath>
-			</text>
-		</svg>
-		<img :src="icon">
-		<p>{{ role.description.en }}</p>
+	<div class="role-token" v-if="role" @click="$emit('click', role)">
+		<template v-if="faceUp">
+			<svg viewBox="-5 -5 110 110">
+				<path d="m0,50a50,50 0 0 0 100,0" id="arch" fill="transparent"/>
+				<text width="500" text-anchor="middle">
+					<textPath xlink:href="#arch" startOffset="50%">
+						{{ role.name.en }}
+					</textPath>
+				</text>
+			</svg>
+			<img :src="icon">
+			<p>{{ role.description.en }}</p>
+		</template>
+		<template v-else>
+			<img src="/images/logo.svg" class="back">
+		</template>
 	</div>
 </template>
 
@@ -17,7 +22,7 @@
 export default {
 	data() {
 		return {
-			//role: null,
+			faceUp: false,
 		}
 	},
 	computed: {
@@ -25,7 +30,23 @@ export default {
 			return '/images/icons/' + this.role.icon;
 		}
 	},
-	props: [ 'role' ],
+	mounted() {
+		this.faceUp = (this.face == 'up');
+	},
+	props: {
+		role: {
+			type: Object,
+			required: true,
+		},
+		face: {
+			type: String,
+			default: 'down',
+			required: false,
+			validator: value => ['up', 'down'].indexOf(value) !== -1,
+		}
+	},
+	methods: {
+	}
 }
 </script>
 
@@ -35,7 +56,7 @@ export default {
 		border-radius: 100px;
 		background: url('/images/token_bg.jpg');
 		background-position: center;
-		position: absolute;
+		position: relative;
 		overflow: hidden;
 		height: 200px;
 		width: 200px;
@@ -68,6 +89,11 @@ export default {
 	}
 	textPath {
 		font-family: 'Macondo Swash Caps', cursive;
+	}
+	img.back {
+		filter: brightness();
+		width: 66%;
+		margin: auto;
 	}
 </style>
 

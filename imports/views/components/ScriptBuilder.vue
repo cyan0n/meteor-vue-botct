@@ -12,7 +12,7 @@
 			<role-type title="Outsiders" :roles=Outsiders :limit=numbers.outsiders @update=toggleRole></role-type>
 			<role-type title="Minion" :roles=Minions :limit=numbers.minions @update=toggleRole></role-type>
 			<role-type title="Demons" :roles=Demons :limit=numbers.demons @update=toggleRole></role-type>
-			<button class="button">Confirm</button>
+			<button class="button" v-if="chosen == chosen_number" @click.prevent="$emit('complete', script)">Confirm</button>
 		</div>
 	</div>
 </template>
@@ -28,6 +28,7 @@ export default {
 			player_numbers: Meteor.settings.public.players,
 			chosen_number: null,
 			script: {},
+			chosen: 0,
 		}
 	},
 	computed: {
@@ -39,8 +40,10 @@ export default {
 		toggleRole(checked, role) {
 			if (checked) {
 				this.script[role.label] = role;
+				this.chosen++;
 			} else {
 				delete this.script[role.label];
+				this.chosen--;
 			}
 		}
 	},
