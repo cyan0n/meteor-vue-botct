@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import RoleOption from '/imports/views/components/ScriptBuilder/RoleOption';
+import RoleOption from '/imports/components/ScriptBuilder/RoleOption';
 
 export default {
 	components : { RoleOption },

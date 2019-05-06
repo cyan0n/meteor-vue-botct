@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import ScriptBuilder from '/imports/views/components/ScriptBuilder';
+import ScriptBuilder from '/imports/components/ScriptBuilder';
 
 
 export default {

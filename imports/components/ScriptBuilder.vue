@@ -19,7 +19,7 @@
 
 <script>
 import '/imports/collections/Roles';
-import ChooseRoleType from '/imports/views/components/ScriptBuilder/ChooseRoleType';
+import ChooseRoleType from '/imports/components/ScriptBuilder/ChooseRoleType';
 
 export default {
 	components: { 'role-type' : ChooseRoleType },

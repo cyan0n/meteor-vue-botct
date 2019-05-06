@@ -1,15 +1,15 @@
-import Layout from '/imports/views/Layout.vue';
-import Home from '/imports/views/pages/Home.vue';
-import Role from '/imports/views/pages/Role.vue';
-import Prep from '/imports/views/pages/Prep.vue';
-import Registration from '/imports/views/pages/User/Registration';
-import Login from '/imports/views/pages/User/Login';
+import Layout from '/imports/Layout.vue';
+import Home from '/imports/pages/Home.vue';
+import Role from '/imports/pages/Role.vue';
+import Prep from '/imports/pages/Prep.vue';
+import Registration from '/imports/pages/User/Registration';
+import Login from '/imports/pages/User/Login';
 
 /* Host */
-import HostLobby from '/imports/views/pages/Game/Host/Lobby';
+import HostLobby from '/imports/pages/Game/Host/Lobby';
 
-import Lobby from '/imports/views/pages/Game/Lobby';
-import Token from '/imports/views/pages/Game/Token';
+import Lobby from '/imports/pages/Game/Lobby';
+import Token from '/imports/pages/Game/Token';
 
 export default [
 	{

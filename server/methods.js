@@ -19,5 +19,5 @@ Meteor.methods({
 			$set: set
 		})
 		// Add Player to plays of game
-	}
+	},
 });

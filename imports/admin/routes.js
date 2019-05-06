@@ -1,6 +1,6 @@
-import Layout from '/imports/admin/views/Layout.vue';
-import Admin from '/imports/admin/views/pages/Admin.vue';
-import Roles from '/imports/admin/views/pages/Roles.vue';
+import Layout from '/imports/admin/Layout.vue';
+import Admin from '/imports/admin/pages/Admin.vue';
+import Roles from '/imports/admin/pages/Roles.vue';
 
 export default [
 	{

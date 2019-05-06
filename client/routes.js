@@ -5,7 +5,7 @@ import routes from '/imports/routes.js';
 import admin_routes from '/imports/admin/routes.js';
 
 // Page Components
-import NotFound from '/imports/views/pages/NotFound.vue';
+import NotFound from '/imports/pages/NotFound.vue';
 
 RouterFactory.configure(factory => {
 	// Simple routes

@@ -10,8 +10,8 @@ $modal-card-title-color: $white;
 $modal-card-body-background-color: $black-bis;
 
 @import '{}/node_modules/bulma-scss/bulma';
-@import '{}/imports/resources/scss/utilities/mixins';
-@import '{}/imports/resources/scss/utilities/spacing';
+@import '{}/imports/scss/utilities/mixins';
+@import '{}/imports/scss/utilities/spacing';
 
 html {
 	height: 100%;

@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import RoleToken from '/imports/views/components/RoleToken';
+import RoleToken from '/imports/components/RoleToken';
 
 export default {
 	components: {

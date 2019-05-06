@@ -1,3 +1,4 @@
+// Only Games in progress (should be only one)
 Meteor.publish('CurrentGame', function () {
 	// TODO for players exclude other player's roles
 	return Games.find({'state': { $ne: 'closed' }});

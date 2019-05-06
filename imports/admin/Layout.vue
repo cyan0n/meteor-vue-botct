@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import AdminNav from '/imports/admin/views/components/AdminNav.vue';
+import AdminNav from '/imports/admin/components/AdminNav.vue';
 
 export default {
 	components: { AdminNav }
