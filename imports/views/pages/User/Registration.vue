@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<form @submit.prevent="submit">
 		<div class="field">
 			<label for="name" class="label">Name</label>
 			<div class="control has-icons-right">
@@ -31,7 +31,7 @@
 			<button class="delete"></button>
 			{{ error }}
 		</div>
-	</div>
+	</form>
 </template>
 
 <script>
@@ -59,9 +59,9 @@ export default {
 					if (err) {
 						this.error = err.reason;
 					} else {
-						this.$router.push('/user');
+						this.$router.push({ name : 'home'});
 					}
-				})
+				});
 			}
 		},
 		close() {

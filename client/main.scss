@@ -1,6 +1,7 @@
 /* Initial Variables */
 $blood-red: #571f1f;
 $pdd: 160px;
+
 @import '{}/node_modules/bulma-scss/utilities/initial-variables';
 
 /* Variables */
@@ -23,15 +24,29 @@ body {
 	min-height: 100%;
 	flex-grow: 1;
 }
-@import '{}/imports/style.scss';
 
-/* body {
+.game {
 	@include linear-gradient(to bottom, $black-bis 80%, $blood-red 100%);
 	min-height: 100%;
 	color: $white-bis;
-	display: flex;
 	font-family: 'Raleway', sans-serif;
+
+	.blood {
+		color: $blood-red;
+	}
+
+	display: grid;
+	grid-template-columns: auto 600px auto;
+	grid-template-rows: 20px 80px auto 20px;
+	grid-template-areas: "nav nav nav"
+	". . ."
+	". content .";
+
+	.content {
+		grid-area: content;
+	}
+
+	.navbar {
+		grid-area: nav;
+	}
 }
-.blood {
-	color: $blood-red;
-} */

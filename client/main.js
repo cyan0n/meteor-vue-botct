@@ -1,22 +1,24 @@
 import Vue from 'vue';
 import VueMeteorTracker from 'vue-meteor-tracker';
-Vue.use(VueMeteorTracker);
 import Vuelidate from 'vuelidate';
-Vue.use(Vuelidate);
-import WebFont from 'webfontloader';
 import { RouterFactory, nativeScrollBehavior } from 'meteor/akryum:vue-router2';
+import WebFont from 'webfontloader';
 
-import './main.html';
-import App from './App.vue';
+Vue.use(VueMeteorTracker);
+Vue.use(Vuelidate);
 
-import './routes';
 // Create router instance
+import './routes';
 const routerFactory = new RouterFactory({
 	mode: 'history',
 	scrollBehavior: nativeScrollBehavior,
 });
 
+import './main.html';
+import App from './App.vue';
+
 Meteor.startup(() => {
+	// Load Google Fonts
 	WebFont.load({
 		google: {
 			families: [
@@ -27,6 +29,8 @@ Meteor.startup(() => {
 			],
 		},
 	});
+
+	// Initialize Router + Vue app
 	const router = routerFactory.create();
 
 	new Vue({

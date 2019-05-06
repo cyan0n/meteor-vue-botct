@@ -16,14 +16,11 @@ export default [
 		path: '/',
 		component: Layout,
 		beforeEnter: (to, from, next) => {
-			console.log(to);
-			console.log(Meteor.userId());
 			if (to.meta.anon && Meteor.userId()) {
 				next({name: 'home'});
 			} else if (!to.meta.anon && !Meteor.userId()) {
 				next({name: 'login'});
 			}
-			console.log('asdasd')
 			next();
 		},
 		children: [
