@@ -1,4 +1,3 @@
-import Roles from '/imports/collections/Roles';
 import roles from './migrations/roles';
 
 Migrations.add({

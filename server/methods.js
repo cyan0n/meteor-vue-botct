@@ -1,8 +1,8 @@
 Meteor.methods({
 	NewGame(script) {
 		Games.insert({
-			script : script,
-			created_at : new Date(),
+			script: script,
+			created_at: new Date(),
 			players: [],
 			rounds: [],
 			state: 'created',
@@ -12,8 +12,8 @@ Meteor.methods({
 	SelectRole(role) {
 		// Set Role.chosen to true
 		let set = {};
-		set['script.'+role.label+'.chosen'] = true;
-		set['players.'+Meteor.userId()] = role;
+		set['script.' + role.label + '.chosen'] = true;
+		set['players.' + Meteor.userId()] = role;
 
 		Games.update({}, {
 			$set: set

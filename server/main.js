@@ -1,13 +1,15 @@
 import { Meteor } from 'meteor/meteor';
 
-import './migrations';
-import roles from './migrations/roles';
-import '/imports/methods/Games';
+// Import All Collections
 import '/imports/collections/Games';
-import '/imports/publications/Games';
-import '/imports/publications/Roles';
+import '/imports/collections/Roles';
+
+import './migrations';
+import './publications';
+import './methods';
 
 Meteor.startup(() => {
   // code to run on server at startup
-  Migrations.migrateTo('1');
+  Migrations.unlock();
+  Migrations.migrateTo(1);
 });
