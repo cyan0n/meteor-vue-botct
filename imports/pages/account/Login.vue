@@ -28,7 +28,7 @@
 			</div>
 		</form>
 		<hr>
-		<router-link :to="{ name: 'registration'}" class="button">Registration</router-link>
+		<router-link :to="{ name: 'register'}" class="button">Sing up</router-link>
 	</div>
 </template>
 

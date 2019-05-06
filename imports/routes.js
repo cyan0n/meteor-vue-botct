@@ -2,8 +2,8 @@ import Layout from '/imports/Layout.vue';
 import Home from '/imports/pages/Home.vue';
 import Role from '/imports/pages/Role.vue';
 import Prep from '/imports/pages/Prep.vue';
-import Registration from '/imports/pages/User/Registration';
-import Login from '/imports/pages/User/Login';
+import Register from '/imports/pages/account/Register';
+import Login from '/imports/pages/account/Login';
 
 /* Host */
 import HostLobby from '/imports/pages/Game/Host/Lobby';
@@ -32,9 +32,9 @@ export default [
 				meta: { anon: true },
 			},
 			{
-				path: 'registration',
-				name: 'registration',
-				component: Registration,
+				path: 'register',
+				name: 'register',
+				component: Register,
 				meta: { anon: true },
 			},
 			/* Auth */
