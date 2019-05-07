@@ -2,10 +2,20 @@
 	<div>
 		<img src="/images/logo.svg" alt="" class="logo">
 		<h1 class="has-text-centered"><span class="blood">Blood</span> on the Clock Tower</h1>
-		<button class="button is-light">Join</button>
-		<router-link :to="{ name:'prep', exact: true }" class="button is-light">Host</router-link>
+		<template v-if="Game">
+			<router-link :to="{ name: 'pick-role' }" class="button is-light">Join Game</router-link>
+			<router-link v-if="User && User.isAdmin" :to="{ name: 'prep' }" class="button is-light">New Game</router-link>
+		</template>
 	</div>
 </template>
+
+<script>
+import { GamesSub, UsersSub } from '/imports/components/mixins/subscribers';
+
+export default {
+	mixins: [ GamesSub, UsersSub ],
+}
+</script>
 
 <style lang="scss" scoped>
 	div {

@@ -17,18 +17,13 @@
 </template>
 
 <script>
-import { Accounts } from 'meteor/accounts-base';
-import { Meteor } from 'meteor/meteor';
-//import '/imports/collections/Users';
+import { UsersSub } from '/imports/components/mixins/subscribers';
 
 export default {
 	data() {
 		return {
 			active: false
 		}
-	},
-	mounted() {
-		console.log('MOUNTED');
 	},
 	methods: {
 		logout () {
@@ -37,11 +32,6 @@ export default {
 			});
 		},
 	},
-	meteor: {
-		User() {
-			return Meteor.users.findOne({'_id':Meteor.userId()});
-		},
-	}
 }
 </script>
 
