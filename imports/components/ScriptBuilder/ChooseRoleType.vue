@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<button @click="open = true" class="button">{{title}} {{ chosen }}/{{ limit }}</button>
+		<button @click="open = true" class="button" :class="{'is-hidden': !button}" >{{title}} {{ chosen }}/{{ limit }}</button>
 
 		<div class="modal" :class="{'is-active': open}">
 			<div class="modal-background" @click="open = false"></div>
@@ -28,7 +28,15 @@ export default {
 			chosen: 0,
 		}
 	},
-	props: [ 'title', 'roles', 'limit' ],
+	props: {
+		title: String,
+		roles: Array,
+		limit: Number,
+		button: {
+			type: Boolean,
+			default: true,
+		}
+	},
 	computed: {
 		maxed() {
 			return this.chosen >= this.limit;

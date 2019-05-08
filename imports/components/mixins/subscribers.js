@@ -14,6 +14,18 @@ export const GamesSub = {
 				return game;
 			}
 			return false;
+		},
+		Full() {
+			if (this.Game) {
+				return Object.keys(this.Game.script).length == Object.keys(this.Game.players).length;
+			}
+			return false;
+		},
+		Role() {
+			if (this.Game) {
+				return this.Game.players[Meteor.userId()];
+			}
+			return null;
 		}
 	}
 };

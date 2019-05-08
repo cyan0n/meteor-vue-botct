@@ -13,6 +13,7 @@ import Token from '/imports/pages/Game/Token';
 
 /* Player */
 import PickRole from '/imports/pages/PickRole';
+import Game from '/imports/pages/Game';
 
 export default [
 	{
@@ -52,6 +53,17 @@ export default [
 				component: PickRole,
 			},
 			{
+				path: 'game/',
+				component: Game,
+				children: [
+					{
+						path: 'lobby',
+						name: 'lobby',
+						component: Lobby,
+					}
+				],
+			},
+			{
 				path: 'role',
 				name: 'role',
 				component: Role,
@@ -65,11 +77,6 @@ export default [
 				path: 'host/lobby',
 				name: 'host_lobby',
 				component: HostLobby,
-			},
-			{
-				path: 'lobby',
-				name: 'lobby',
-				component: Lobby,
 			},
 			{
 				path: 'token',

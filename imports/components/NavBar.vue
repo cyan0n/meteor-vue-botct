@@ -20,6 +20,7 @@
 import { UsersSub } from '/imports/components/mixins/subscribers';
 
 export default {
+	mixins: [ UsersSub ],
 	data() {
 		return {
 			active: false

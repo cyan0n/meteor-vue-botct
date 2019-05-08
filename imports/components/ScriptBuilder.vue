@@ -13,6 +13,8 @@
 			<role-type title="Minion" :roles=Minions :limit=numbers.minions @update=toggleRole></role-type>
 			<role-type title="Demons" :roles=Demons :limit=numbers.demons @update=toggleRole></role-type>
 			<button class="button" v-if="chosen == chosen_number" @click.prevent="$emit('complete', script)">Confirm</button>
+
+			<role-type ref="drunk" title="Select Drunk" :button=false :roles=Townsfolk :limit=1 @update=chooseDrunk></role-type>
 		</div>
 	</div>
 </template>
@@ -39,11 +41,49 @@ export default {
 	methods: {
 		toggleRole(checked, role) {
 			if (checked) {
-				this.script[role.label] = role;
 				this.chosen++;
+				/* Special cases */
+				switch (role.label) {
+					case 'baron': {
+						this.numbers.outsiders += 2;
+						this.numbers.townsfolk -= 2;
+						break;
+					}
+					case 'drunk': {
+						// open Townsfolk selector
+						this.$refs.drunk.open = true;
+						return;
+						// TODO Disable chosen townsfolk from selector
+					}
+				}
+				this.script[role.label] = role;
 			} else {
-				delete this.script[role.label];
 				this.chosen--;
+				/* Special cases */
+				switch (role.label) {
+					case 'baron': {
+						this.numbers.outsiders -= 2;
+						this.numbers.townsfolk += 2;
+						break;
+					}
+					case 'drunk' :{
+						// re-enable chosen townsfolk form selector
+						return;
+					}
+				}
+				delete this.script[role.label];
+			}
+		},
+		chooseDrunk(checked, role) {
+			if (checked) {
+
+				// Chosen townsfolk is added with 'drunk' key and 'drunks' token
+				console.log(role.label+' is drunk!');
+				role.equipped = {'drunk':true};
+				this.script['drunk'] = role;
+			} else {
+				console.log(role.label + ' is sober!');
+				delete this.script['drunk'];
 			}
 		}
 	},
