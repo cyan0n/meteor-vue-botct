@@ -7,13 +7,14 @@ import Login from '/imports/pages/account/Login';
 
 /* Host */
 import HostLobby from '/imports/pages/game/Host/Lobby';
+import SetUp from '/imports/pages/host/SetUp';
 
 import Lobby from '/imports/pages/game/Lobby';
 import Token from '/imports/pages/game/Token';
 
 /* Player */
 import PickRole from '/imports/pages/PickRole';
-import Game from '/imports/pages/game';
+import Game from '/imports/pages/Game';
 
 export default [
 	{
@@ -62,6 +63,10 @@ export default [
 						component: Lobby,
 					}
 				],
+			},
+			{
+				path: 'setup',
+				component: SetUp,
 			},
 			{
 				path: 'role',

@@ -7,6 +7,42 @@ import WebFont from 'webfontloader';
 Vue.use(VueMeteorTracker);
 Vue.use(Vuelidate);
 
+// Add Modal with promise
+Vue.prototype.$modalPromise = function(component, props) {
+	return new Promise(resolve => {
+		const ComponentClass = Vue.extend(component);
+		const instance = new ComponentClass({ propsData: props || {} });
+		// TODO Add slots https://css-tricks.com/creating-vue-js-component-instances-programmatically/#article-header-id-3
+		// Add resolve event listner
+		instance.$once('close', value => {
+			instance.$destroy();
+			instance.$el.remove();
+			resolve(value);
+		});
+
+		// Insert into the DOM
+		instance.$mount();
+		document.body.appendChild(instance.$el);
+	});
+};
+
+Vue.prototype.$modal = function(component, props) {
+	const ComponentClass = Vue.extend(component);
+	const instance = new ComponentClass({
+		propsData: props || {}
+	});
+	// TODO Add slots https://css-tricks.com/creating-vue-js-component-instances-programmatically/#article-header-id-3
+	// Add resolve event listner
+	instance.$once('close', () => {
+		instance.$destroy();
+		instance.$el.remove();
+	});
+
+	// Insert into the DOM
+	instance.$mount();
+	document.body.appendChild(instance.$el);
+};
+
 // Create router instance
 import './routes';
 const routerFactory = new RouterFactory({

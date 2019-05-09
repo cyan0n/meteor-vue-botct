@@ -2,70 +2,70 @@
 	"public": {
 		"players": {
 			"5": {
-				"townsfolk": 3,
-				"outsiders": 0,
-				"minions": 1,
-				"demons": 1
+				"Townsfolk": 3,
+				"Outsiders": 0,
+				"Minions": 1,
+				"Demons": 1
 			},
 			"6": {
-				"townsfolk": 3,
-				"outsiders": 1,
-				"minions": 1,
-				"demons": 1
+				"Townsfolk": 3,
+				"Outsiders": 1,
+				"Minions": 1,
+				"Demons": 1
 			},
 			"7": {
-				"townsfolk": 5,
-				"outsiders": 0,
-				"minions": 1,
-				"demons": 1
+				"Townsfolk": 5,
+				"Outsiders": 0,
+				"Minions": 1,
+				"Demons": 1
 			},
 			"8": {
-				"townsfolk": 5,
-				"outsiders": 1,
-				"minions": 1,
-				"demons": 1
+				"Townsfolk": 5,
+				"Outsiders": 1,
+				"Minions": 1,
+				"Demons": 1
 			},
 			"9": {
-				"townsfolk": 5,
-				"outsiders": 2,
-				"minions": 1,
-				"demons": 1
+				"Townsfolk": 5,
+				"Outsiders": 2,
+				"Minions": 1,
+				"Demons": 1
 			},
 			"10": {
-				"townsfolk": 7,
-				"outsiders": 0,
-				"minions": 2,
-				"demons": 1
+				"Townsfolk": 7,
+				"Outsiders": 0,
+				"Minions": 2,
+				"Demons": 1
 			},
 			"11": {
-				"townsfolk": 7,
-				"outsiders": 1,
-				"minions": 2,
-				"demons": 1
+				"Townsfolk": 7,
+				"Outsiders": 1,
+				"Minions": 2,
+				"Demons": 1
 			},
 			"12": {
-				"townsfolk": 7,
-				"outsiders": 2,
-				"minions": 2,
-				"demons": 1
+				"Townsfolk": 7,
+				"Outsiders": 2,
+				"Minions": 2,
+				"Demons": 1
 			},
 			"13": {
-				"townsfolk": 9,
-				"outsiders": 0,
-				"minions": 3,
-				"demons": 1
+				"Townsfolk": 9,
+				"Outsiders": 0,
+				"Minions": 3,
+				"Demons": 1
 			},
 			"14": {
-				"townsfolk": 9,
-				"outsiders": 1,
-				"minions": 3,
-				"demons": 1
+				"Townsfolk": 9,
+				"Outsiders": 1,
+				"Minions": 3,
+				"Demons": 1
 			},
 			"15": {
-				"townsfolk": 9,
-				"outsiders": 2,
-				"minions": 3,
-				"demons": 1
+				"Townsfolk": 9,
+				"Outsiders": 2,
+				"Minions": 3,
+				"Demons": 1
 			}
 		}
 	}

@@ -1,16 +1,33 @@
 <template>
-	<div class="role-option" :class="{checked:checked}" @click="toggle">
+	<div class="role-option" :class="{checked: value, 'is-hidden':!value && disabled}" @click="toggle">
 		<img :src="icon" alt="">
 		{{ role.name.en }}
-		<span class="icon"><i class="mdi" :class="{'mdi-radiobox-blank':!checked, 'mdi-radiobox-marked': checked}"></i></span>
+		<span class="icon">
+			<i class="mdi" :class="{'mdi-radiobox-blank': !value, 'mdi-radiobox-marked': value}"></i>
+		</span>
 	</div>
 </template>
 
 <script>
 export default {
+	props: {
+		role: {
+			type: Object,
+			required: true,
+		},
+		disabled: {
+			type: Boolean,
+			default: false,
+		},
+		checked: {
+			type: Boolean,
+			default: false,
+		},
+		maxed: Boolean
+	},
 	data() {
 		return {
-			checked: false,
+			value: false,
 		};
 	},
 	computed: {
@@ -18,12 +35,14 @@ export default {
 			return '/images/icons/' + this.role.icon;
 		}
 	},
-	props: ['role', 'maxed'],
+	mounted() {
+		this.value = this.checked;
+	},
 	methods: {
 		toggle() {
-			if (!this.maxed || this.checked) {
-				this.checked = !this.checked;
-				this.$emit('toggle', this.checked, this.role);
+			if (this.value || !this.disabled) {
+				this.value = !this.value;
+				this.$emit('toggle', this.value, this.role);
 			}
 		}
 	}
