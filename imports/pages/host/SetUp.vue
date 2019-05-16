@@ -13,7 +13,7 @@
 					<template v-if="game_sizes[size][type]"><!-- or chosen > 0 -->
 						<button class="button" @click="$refs.select[index].open()">{{ type }} /{{ game_sizes[size][type] }}</button>
 						<modal ref="select" :title=type>
-							<role-select :roles="getRoles(type)" :script=script[type] :limit=game_sizes[size][type]></role-select>
+							<role-select :roles="getRoles(type)" :limit=game_sizes[size][type]></role-select>
 						</modal>
 					</template>
 				</div>
@@ -25,6 +25,7 @@
 <script>
 import Modal from '/imports/components/utils/Modal';
 import RoleSelect from '/imports/components/RoleSelect';
+import Script from '/imports/collections/Script';
 
 export default {
 	components: {
@@ -34,20 +35,6 @@ export default {
 	data() {
 		return {
 			size: 0,
-			player_numbers: Meteor.settings.public.players,
-			chosen_number: null,
-			script: {
-				Townsfolk: {},
-				Outsiders: {},
-				Minions: {},
-				Demons: {},
-			},
-			selected: {
-				Townsfolk: 0,
-				Outsiders: 0,
-				Minions: 0,
-				Demons: 0,
-			},
 			types: ['Townsfolk', 'Outsiders', 'Minions', 'Demons'],
 		}
 	},
@@ -56,13 +43,16 @@ export default {
 			return Meteor.settings.public.players;
 		}
 	},
-	watch: {
-		script:{
-			deep:true,
-			handler: function (value) {
-				console.log(value);
+	mounted() {
+		const handle = Script.find({}).observeChanges({
+			added(id, obj) {
+				console.log('asd');
+				console.log(obj);
+			},
+			removed(id) {
+				
 			}
-		}
+		})
 	},
 	methods: {
 		open(roles) {
@@ -83,7 +73,11 @@ export default {
 	},
 	meteor: {
 		$subscribe: {
-			'Roles': []
+			'Roles': [],
+			'Script': [],
+		},
+		Script() {
+			return Script.find({});
 		},
 		RoleList() {
 			return Roles.find({});

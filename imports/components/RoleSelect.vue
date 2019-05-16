@@ -6,6 +6,7 @@
 
 <script>
 import RoleOption from '/imports/components/ScriptBuilder/RoleOption';
+import Script from '/imports/collections/Script';
 
 export default {
 	components: { RoleOption },
@@ -19,10 +20,7 @@ export default {
 		roles: Array,
 		limit: Number,
 		disabled: Array,
-		script: {
-			type: Object,
-			default: () => {return {}},
-		}
+		type: String,
 	},
 	computed: {
 		maxed() {
@@ -36,15 +34,23 @@ export default {
 		toggle(checked, role) {
 			if (checked) {
 				// add to selected
-				this.value[role.label] = role;
+				Script.insert(role);
 				this.selected++;
 			} else {
 				// remove from selected
-				delete this.value[role.label];
+				Script.remove({label:role.label})
 				this.selected--;
 			}
 		},
 	},
+	meteor: {
+		$subscribe: {
+			'Script': [],
+		},
+		Script() {
+			return Script.find({type: this.type});
+		},
+	}
 }
 </script>
 
