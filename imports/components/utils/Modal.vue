@@ -1,12 +1,12 @@
 <template>
-	<div class="modal" :class="{'is-active': active}">
+	<div class="modal" :class="{'is-active': active || temp}">
 		<div class="modal-background" @click="close"></div>
 		<div class="modal-card">
 			<header v-if="title" class="modal-card-head">
 				<span class="modal-card-title">{{ title }}</span>
 			</header>
 			<section class="modal-card-body">
-				<slot></slot>
+				<slot @close=close></slot>
 			</section>
 		</div>
 		<button class="modal-close is-large" @click="close"></button>
@@ -21,7 +21,14 @@ export default {
 		}
 	},
 	props: {
-		title: String
+		title: String,
+		temp: Boolean,
+	},
+	mounted() {
+		this.$on('test',(a)=>{
+			console.log('st');
+			console.log(a);
+		})
 	},
 	methods: {
 		open() {
@@ -30,7 +37,7 @@ export default {
 		close() {
 			this.active = false;
 			this.$emit('close');
-		}
+		},
 	}
 }
 </script>

@@ -7,18 +7,29 @@ import WebFont from 'webfontloader';
 Vue.use(VueMeteorTracker);
 Vue.use(Vuelidate);
 
-// Add Modal with promise
-Vue.prototype.$modalPromise = function(component, props) {
+// Add Modal with promise (Dialog)
+import Modal from '/imports/components/utils/Modal';
+Vue.prototype.$modalPromise = function(component, attributes) {
 	return new Promise(resolve => {
-		const ComponentClass = Vue.extend(component);
-		const instance = new ComponentClass({ propsData: props || {} });
-		// TODO Add slots https://css-tricks.com/creating-vue-js-component-instances-programmatically/#article-header-id-3
+		const ModalClass = Vue.extend(Modal);
+		const instance = new ModalClass({ propsData: {
+			temp: true,
+		} });
+
 		// Add resolve event listner
 		instance.$once('close', value => {
 			instance.$destroy();
 			instance.$el.remove();
 			resolve(value);
 		});
+		attributes.on.close = function() {
+			instance.$destroy();
+			instance.$el.remove();
+			resolve();
+		}
+
+		// Add component to Modal slot
+		instance.$slots.default = instance.$createElement(component, attributes);
 
 		// Insert into the DOM
 		instance.$mount();
