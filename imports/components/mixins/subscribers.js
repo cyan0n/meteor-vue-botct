@@ -1,4 +1,5 @@
 import '/imports/collections/Games';
+import '/imports/collections/Script';
 
 export const GamesSub = {
 	meteor: {
@@ -39,6 +40,29 @@ export const UsersSub = {
 			return Meteor.users.findOne({
 				'_id': Meteor.userId()
 			});
+		},
+	}
+}
+
+export const ScriptSub = {
+	meteor: {
+		$subscribe: {
+			'Script': []
+		},
+		Script() {
+			return Script.find();
+		},
+		Script_Townsfolk() {
+			return Script.find({type: 'townsfolk'});
+		},
+		Script_Outsiders() {
+			return Script.find({type: 'outsider'});
+		},
+		Script_Minions() {
+			return Script.find({type: 'minion'});
+		},
+		Script_Demons() {
+			return Script.find({type: 'demon'});
 		},
 	}
 }
